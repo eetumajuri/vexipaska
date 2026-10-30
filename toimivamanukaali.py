@@ -71,7 +71,6 @@ def spin_signed(motor, speed):
         motor.stop(BRAKE)
 
 
-
 while True:
 
 
@@ -117,16 +116,26 @@ while True:
             lift_motor1.stop(HOLD)
             lift_motor2.stop(HOLD)
 
-
+#r1 sulkee
         if controller.buttonR1.pressing():
             claw_motor.spin(FORWARD, CLAW_SPEED, PERCENT)
-
+#r2 avaa
         elif controller.buttonR2.pressing():
             claw_motor.spin(REVERSE, CLAW_SPEED, PERCENT)
 
         else:
             claw_motor.stop(HOLD)
+
     else:
         claw_motor.stop(HOLD)
-
+        
+    
+    brain.screen.clear_screen()
+    brain.screen.set_cursor(1, 1)
+    brain.screen.print(claw_motor.position(DEGREES))
     wait(20, MSEC)
+    
+
+
+# PIENIN 69
+# suurin 260
